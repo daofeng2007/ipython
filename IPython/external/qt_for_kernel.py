@@ -40,6 +40,10 @@ _qt_apis = (QT_API_PYSIDE, QT_API_PYQT, QT_API_PYQT5, QT_API_PYQTv1,
             QT_API_PYQT_DEFAULT)
 
 #Constraints placed on an imported matplotlib
+# TODO: Make sure this logic is still in sync with matplotlib's requirements.
+# In particular, matplotlib can also now support a qt5 backend, and so this will
+# break if matplotlib is imported and running happily with qt5, because
+# it only queries for the preferred qt4 option.
 def matplotlib_options(mpl):
     if mpl is None:
         return
@@ -82,8 +86,13 @@ def get_options():
 
     qt_api = os.environ.get('QT_API', None)
     if qt_api is None:
+<<<<<<< HEAD
         #no ETS variable. Ask mpl, then use default fallback path
         return matplotlib_options(mpl) or [QT_API_PYQT_DEFAULT, QT_API_PYSIDE, QT_API_PYQT5]
+=======
+        #no ETS variable. Ask mpl, then use either
+        return matplotlib_options(mpl) or [QT_API_PYQT_DEFAULT, QT_API_PYSIDE]
+>>>>>>> origin/4.0.x
     elif qt_api not in _qt_apis:
         raise RuntimeError("Invalid Qt API %r, valid values are: %r" %
                            (qt_api, ', '.join(_qt_apis)))

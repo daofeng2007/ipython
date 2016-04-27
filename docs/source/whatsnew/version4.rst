@@ -2,6 +2,7 @@
  4.x Series
 ============
 
+<<<<<<< HEAD
 IPython 4.2
 ===========
 
@@ -39,6 +40,38 @@ though there are a few improvements.
 
 Many many docs improvements and bug fixes, you can see the
 `list of changes <https://github.com/ipython/ipython/compare/4.0.0...4.1.0>`_
+=======
+IPython 4.0.3
+=============
+
+Released January, 2016
+
+Fixes for:
+
+- Python 3.5 bug in that could crash during shutdown, triggered by deprecations in traitlets 4.1.
+- Typo in deprecation message for nbconvert
+
+
+IPython 4.0.2
+=============
+
+Released January, 2016
+
+Fixes for:
+
+- Fix backward-compatiblity shim for ``IPython.Config``, which should have been deprecated instead of removed. This will be removed in 5.0.
+
+IPython 4.0.1
+=============
+
+Released November, 2015
+
+Fixes for:
+
+- Installation on some systems
+- Compatibility with CPython 3.4.4
+- Compatibility with Qt5
+>>>>>>> origin/4.0.x
 
 IPython 4.0
 ===========

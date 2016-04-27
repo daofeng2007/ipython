@@ -118,6 +118,13 @@ def token_at_cursor(cell, cursor_pos=0):
             # we found the cursor, stop reading
             break
         
+<<<<<<< HEAD
+=======
+        tokens.append(tok)
+        if tok.token in (tokenize2.NEWLINE, tokenize2.NL):
+            offset += len(tok.line)
+    
+>>>>>>> origin/4.0.x
     if call_names:
         return call_names[-1]
     elif names:

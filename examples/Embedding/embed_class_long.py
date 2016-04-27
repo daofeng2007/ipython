@@ -133,3 +133,4 @@ print('\nMain program calling bar("spam")\n')
 bar('spam')
 
 print('Main program finished. Bye!')
+print('Main program finished. Bye!')
